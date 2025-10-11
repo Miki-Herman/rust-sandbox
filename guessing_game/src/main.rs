@@ -4,12 +4,16 @@ use rand::Rng;
 
 fn main() {
     println!("Guess the number from 1-100!");
+    println!("But remember you have only 5 tries!");
+
     let secret_number = rand::thread_rng().gen_range(1..=100);
+    let mut counter = 0;
     
-    loop {
+    while  counter < 5{
         println!("Please enter your guess:");
-       
         let mut guess = String::new();
+
+        counter += 1;
 
         io::stdin()
             .read_line(&mut guess)
@@ -30,4 +34,9 @@ fn main() {
             },       
         }
     };
+
+    if counter == 5 {
+        println!("You lost... Try again!")
+    };
+    
 }
