@@ -1,7 +1,10 @@
 fn main() { 
-    let config_max = Some(3);
-    if let Some(max) = config_max {
-        println!("The max is {max}");
-    }    
+    let mut v = vec![1, 2, 3, 4, 5];
+    v.push(6);
+
+    let first = &v[0];
+
+
+    println!("The first element is: {first}");    
 
 }
